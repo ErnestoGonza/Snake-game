@@ -4,7 +4,7 @@ class Head {
   constructor(el) {
     this.node = document.createElement('img');
     this.node.setAttribute('id', 'head');
-    this.node.setAttribute('src', 'src/assets/pacman.png')
+    this.node.setAttribute('src', 'src/assets/pacman-transformed.png')
     el.appendChild(this.node);
 
     this.currentDirection = 'right';
@@ -74,8 +74,6 @@ class Head {
       //   }
       // });
     }
-    
-
     setTimeout(this.move.bind(this), this.SPEED);
   }
 }
