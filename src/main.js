@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const head = new Head(board);
   new Apple(board);
+  // const snakeBody = new Body(board)
   // console.log(board);
 
 
