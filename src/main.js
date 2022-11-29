@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const board = document.querySelector('#board');
 
   const head = new Head(board);
-  const currApple = new Apple(board);
-  // console.log(head.node.style.top)
-  // console.log(currApple.node.style.top)
+  new Apple(board);
+  // const snakeBody = new Body(board)
+  // console.log(board);
+
 
   body.addEventListener('keydown', (e) => {
     //add else if statement to add instruction for up, down, right key pressed

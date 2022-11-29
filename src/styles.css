@@ -1,4 +1,24 @@
+*{
+  background-color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  color: yellow;
+  margin-left: 80px;
+}
+
 #head {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+}
+
+#snakebody {
   background: black;
   height: 50px;
   width: 50px;
@@ -9,7 +29,8 @@
 #board {
   height: 700px;
   width: 700px;
-  border: 1px black solid;
+  border: 6px darkblue double;
+  border-radius: 25px;
   position: relative;
 }
 
