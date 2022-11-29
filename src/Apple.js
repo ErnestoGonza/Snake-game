@@ -11,7 +11,8 @@ class Apple {
     el.appendChild(this.node);
 
     //return the position value of the current apple
-    return {left: this.node.style.left, right: this.node.style.top};
+    // return {left: this.node.style.left, right: this.node.style.top};
+    return this;
   }
 }
 

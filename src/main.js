@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const board = document.querySelector('#board');
 
   const head = new Head(board);
-  const curr_apple = new Apple(board);
-  // console.log(curr_apple);
+  const currApple = new Apple(board);
+  // console.log(head.node.style.top)
+  // console.log(currApple.node.style.top)
+
+  setTimeout(function () {
+
+  }, head.SPEED)
 
   body.addEventListener('keydown', (e) => {
     //add else if statement to add instruction for up, down, right key pressed
@@ -25,6 +30,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-console.log(head)
-

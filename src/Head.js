@@ -11,6 +11,8 @@ class Head {
     this.node.style.left = 0;
 
     setTimeout(this.move.bind(this), this.SPEED);
+    // return {left: this.node.style.left, right: this.node.style.top}
+    return this;
   }
 
   move() {
@@ -40,4 +42,3 @@ class Head {
     setTimeout(this.move.bind(this), this.SPEED);
   }
 }
-// console.log(curr_apple)
