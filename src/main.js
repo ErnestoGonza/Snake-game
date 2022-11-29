@@ -7,22 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // console.log(head.node.style.top)
   // console.log(currApple.node.style.top)
 
-  setTimeout(function () {
-
-  }, head.SPEED)
-
   body.addEventListener('keydown', (e) => {
     //add else if statement to add instruction for up, down, right key pressed
-    if (e.code === 'ArrowLeft') {
+    if (e.code === 'ArrowLeft' && head.currentDirection !== 'right') {
       console.log('pressed left');
       head.currentDirection = 'left';
-    } else if (e.code === 'ArrowRight') {
+    } else if (e.code === 'ArrowRight' && head.currentDirection !== 'left') {
       console.log('pressed right');
       head.currentDirection = 'right';
-    } else if (e.code === 'ArrowUp') {
+    } else if (e.code === 'ArrowUp' && head.currentDirection !== 'down') {
       console.log('pressed up');
       head.currentDirection = 'up';
-    } else if (e.code === 'ArrowDown') {
+    } else if (e.code === 'ArrowDown' && head.currentDirection !== 'up') {
       console.log('pressed down');
       head.currentDirection = 'down';
     } else {
