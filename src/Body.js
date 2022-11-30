@@ -4,7 +4,7 @@ class Body {
     constructor(el) {
         this.node = document.createElement('img');
         this.node.setAttribute('class', 'body');
-        this.node.setAttribute('src', 'src/assets/pac-man.gif');
+        this.node.setAttribute('src', 'src/assets/rainbow-ghost-pacman-ghost.gif');
 
         el.appendChild(this.node);
     }
