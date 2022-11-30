@@ -2,8 +2,9 @@
 //from the approach lecture
 class Body {
     constructor(el) {
-        this.node = document.createElement('div');
+        this.node = document.createElement('img');
         this.node.setAttribute('class', 'body');
+        this.node.setAttribute('src', 'src/assets/pac-man.gif');
 
         el.appendChild(this.node);
     }

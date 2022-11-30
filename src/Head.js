@@ -4,7 +4,7 @@ class Head {
   constructor(el) {
     this.count = 0;
     //this line below not sure if it's working;
-    // this.board = document.querySelector('#board');
+    this.board = document.querySelector('#board');
     this.node = document.createElement('img');
     this.node.setAttribute('id', 'head');
     this.node.setAttribute('src', 'src/assets/pac-man.gif')
@@ -68,37 +68,42 @@ class Head {
     }
     
 
-    let appleTop = Number(document.getElementById('apple').style.top.replace('px',''));
-    let appleLeft = Number(document.getElementById('apple').style.left.replace('px', ''));
+    // let appleTop = Number(document.getElementById('apple').style.top.replace('px',''));
+    // let appleLeft = Number(document.getElementById('apple').style.left.replace('px', ''));
 
     // console.log(appleTop, appleLeft);
-
+    const apple = document.querySelector('#apple');
+    const applePos = {
+      top: Number(apple.style.top.replace('px', '')),
+      left: Number(apple.style.left.replace('px', '')),
+    };
     //check if apple and head overlap
 
     //need to modify the condition below
     //Math.abs(appleTop - topPosition) < 40 && Math.abs(appleLeft - leftPosition) < 40
-    if (leftPosition === appleLeft && topPosition === appleTop) {
-      document.getElementById('apple').remove();
+    if (leftPosition === applePos.left && topPosition === applePos.top) {
+      apple.remove();
       const score = document.getElementById('score');
       this.count += 5;
       score.innerText = `SCORE: ${this.count}`;
-      const newApple = new Apple(board);
+      let newApple = new Apple(this.board);
 
       // while loop is going to make sure apple does not appear at the snake head position
-      while (topPosition === newApple.top && newApple.left === leftPosition) {
-        document.getElementById('apple').remove();
-        newApple = new Apple(board);
+      while (`${topPosition}` === newApple.node.style.top && newApple.node.style.left === `${leftPosition}`) {
+        newApple.node.remove();
+        newApple = new Apple(this.board);
       }
       //Generate new body segment
-      const body = new Body(board);
+      const body = new Body(this.board);
       this.bodies.push(body);
+      console.log(this.bodies);
       this.size++;
     }
 
     //Record head positions but keep the array just 1 el longer than this.bodies
     //new head positions go to the front of the array
-    this.headPositions.unshift({top: `${topPosition}`, left: `${leftPosition}`});
-    console.log(headPositions);
+    this.headPositions.unshift({top: `${topPosition}px`, left: `${leftPosition}px`});
+    console.log(this.headPositions[0]);
     if (this.headPositions.length > this.size + 1) {
       this.headPositions.pop();
     }
@@ -115,7 +120,7 @@ class Head {
   moveBodies(timeoutID) {
     const head = this.node;
 
-    for (let i = 0; i < this.bodies.length - 1;i++) {
+    for (let i = 0; i < this.bodies.length;i++) {
       const body = this.bodies[i];
       body.node.style.top = this.headPositions[i+1].top;
       body.node.style.left = this.headPositions[i+1].left;
