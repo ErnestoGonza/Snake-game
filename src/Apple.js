@@ -5,8 +5,12 @@ class Apple {
     this.node.setAttribute('src', 'src/assets/apple-transformed.png');
 
     //make the apple appear at a random location within the board
-    this.node.style.left = `${Math.floor(Math.random() * (650 - 0) + 1)}px`;
-    this.node.style.top = `${Math.floor(Math.random() * (650 - 0) + 1)}px`;
+    
+    //randomize the position of the apple node
+    //Math.floor(Math.random() * 14) * 50
+
+    this.node.style.left = `${Math.floor(Math.random() * 14) * 50}px`;
+    this.node.style.top = `${Math.floor(Math.random() * 14) * 50}px`;
 
     el.appendChild(this.node);
 

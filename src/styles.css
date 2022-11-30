@@ -18,13 +18,13 @@ h1 {
   position: absolute;
 }
 
-#snakebody {
+/* .body {
   background: black;
   height: 50px;
   width: 50px;
-  background-color: green;
+  background-color: black;
   position: absolute;
-}
+} */
 
 #board {
   height: 700px;
